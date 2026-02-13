@@ -1,10 +1,24 @@
-Group members: Hayaan Abubakar (22p9340), 
-Muhammad Mairaj (22p9327), 
-Fawad Ahmed(21p8317)
-Project Name: Fluffy cozy kit
+# Fluffy Cozzy Kitt 🐾
 
-Project breakdown: Hayaan Abubakar: Adult cats, kittens, Cat food, 
-Muhammad Mairaj: Accessories, Account, Admin 
-Fawad Ahmed: Product details, Homepage, Checkout.
+Fluffy Cozzy Kitt is a full-featured e-commerce website for cats, kittens, cat food, and cat accessories.  
+It is built using HTML, CSS, JavaScript, PHP, and MySQL.
 
-We have worked together and divided accordingly on only html for now.
+
+## 🚀 Features
+
+- Browse products: cat foods, toys, and accessories
+- Product categories for easy navigation
+- Shopping cart functionality
+- PHP backend with MySQL database
+- Responsive design (desktop & mobile)
+- Admin panel (if implemented) for managing products
+
+## 🛠 Tech Stack
+
+- Frontend:** HTML, CSS, JavaScript  
+- Backend:** PHP  
+- Database:** MySQL  
+- Server:** XAMPP / Apache
+
+## 📁 Project Structure
+
