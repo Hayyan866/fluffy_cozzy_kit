@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Cozzy Kit - My Account</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <!-- Overlay for background dimming -->
+    <div class="overlay" id="cartOverlay"></div>
+
+    <!-- Cart Side Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-panel-header">
+            <h2>My Cart</h2>
+            <button class="cart-panel-close" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-panel-footer">
+            <div class="cart-total" id="cartTotal"></div>
+            <div class="cart-actions">
+                <button class="cart-action-btn" onclick="viewCart()">View and Edit Cart</button>
+                <button class="cart-action-btn checkout" onclick="checkout()">Go to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="cat.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="green">Fluffy</span> 
+                    <span class="green">cozzy</span><br>
+                    <span class="black">kit</span>
+                </div>
+            </div>
+            <ul class="nav-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adult-cats.html">Adult Cats</a></li>
+                <li><a href="kittens.html">Kittens</a></li>
+                <li><a href="cat-food.html">Cat Food</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <img src="search.png" alt="Search Icon">
+                </li>
+                <li>
+                    <a href="#" id="openCart" style="position: relative;">
+                        <img src="cart.png" alt="Cart Logo">
+                        <span id="cartCount" class="cart-count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">
+                        <img src="account.png" alt="Account Logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Account Section -->
+    <section class="account">
+        <h2>My Account</h2>
+        <div class="account-container">
+            <!-- Profile Section -->
+            <div class="profile-container" id="profileContainer">
+                <h3>Welcome, Guest!</h3>
+                <div class="guest-message">
+                    <p>This is a simplified demonstration of the account page.</p>
+                    <p>The login and signup functionality has been removed as requested.</p>
+                </div>
+            </div>
+
+            <!-- Order Tracking -->
+            <div class="tracking-container" id="trackingContainer">
+                <h3>Order Tracking</h3>
+                <div id="activeOrders">
+                    <p>No active orders.</p>
+                </div>
+            </div>
+
+            <!-- Past Orders -->
+            <div class="past-orders-container" id="pastOrdersContainer">
+                <h3>Past Orders</h3>
+                <div id="pastOrders">
+                    <p>No past orders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Fluffy Cozzy Kit. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="account-simplified.js"></script>
+</body>
+</html>

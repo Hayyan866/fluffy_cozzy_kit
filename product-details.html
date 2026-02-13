@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Cozzy Kit - Product Details</title>
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+    <!-- Overlay for background dimming -->
+    <div class="overlay" id="cartOverlay"></div>
+
+    <!-- Cart Side Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-panel-header">
+            <h2>My Cart</h2>
+            <button class="cart-panel-close" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-panel-footer">
+            <div class="cart-total" id="cartTotal"></div>
+            <div class="cart-actions">
+                <button class="cart-action-btn" onclick="viewCart()">View and Edit Cart</button>
+                <button class="cart-action-btn checkout" onclick="checkout()">Go to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="cat.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="green">Fluffy</span> 
+                    <span class="green">cozzy</span><br>
+                    <span class="black">kit</span>
+                </div>
+            </div>
+            <ul class="nav-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adult-cats.html">Adult Cats</a></li>
+                <li><a href="kittens.html">Kittens</a></li>
+                <li><a href="cat-food.html">Cat Food</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <img src="search.png" alt="Search Icon">
+                </li>
+                <li>
+                    <a href="#" id="openCart" style="position: relative;">
+                        <img src="cart.png" alt="Cart Logo">
+                        <span id="cartCount" class="cart-count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">
+                        <img src="account.png" alt="Account Logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+        <div class="product-image-container">
+            <img id="productImage" src="" alt="Product">
+        </div>
+        <div class="product-info">
+            <h2 id="productName"></h2>
+            <p class="price" id="productPrice"></p>
+            <p id="productDescription"></p>
+            <ul class="product-details-list">
+                <li id="productAge"></li>
+                <li id="productBreed"></li>
+                <li id="productType"></li>
+            </ul>
+            <div class="product-actions">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <a href="checkout.html" class="proceed-to-checkout-btn">Proceed to Checkout</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <h3>Reviews & Ratings</h3>
+        <div id="reviewsList">
+            <div class="review">
+                <span class="stars">★★★★☆</span> "Absolutely love this product! My cat is thrilled!" - HappyPetOwner
+            </div>
+        </div>
+        <form class="review-form" id="reviewForm">
+            <textarea placeholder="Write your review..." required></textarea>
+            <input type="number" min="1" max="5" placeholder="Rating (1-5)" required>
+            <button class="submit-review-btn">Submit Review</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Fluffy Cozzy Kit. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js" defer></script>
+    <script src="product-details.js" defer></script>
+</body>
+</html>

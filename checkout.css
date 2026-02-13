@@ -1,0 +1,425 @@
+/* 
+:root {
+    --primary-green: #a7c957;
+    --dark-green: #6a994e;
+    --light-green: #d1e8a0;
+    --primary-black: #333;
+    --background-mint: #e8f5f0;
+    --light-gray: #eaeaea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--background-mint);
+    color: var(--primary-black);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--background-mint);
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    line-height: 1.2;
+}
+
+.logo-text .green {
+    color: var(--primary-green);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo-text .black {
+    color: var(--primary-black);
+    font-size: 1.5rem;
+    font-weight: bold;
+} */
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+}
+
+.user-nav img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.user-nav a {
+    text-decoration: none;
+    color: var(--primary-black);
+    margin: 0 10px;
+}
+
+.user-nav input[type="button"] {
+    background-color: var(--primary-black);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: var(--primary-black);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: var(--primary-black);
+}
+
+/* Checkout Form */
+.checkout-form {
+    margin-top: 20px;
+}
+
+.checkout-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 300px;
+}
+
+.checkout-form textarea {
+    height: 80px;
+    max-width: 300px;
+}
+
+/* Payment Method */
+.payment-method {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.payment-method label {
+    margin-left: 5px;
+}
+
+.card-details {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.card-details input {
+    margin-bottom: 10px;
+}
+
+/* Order Summary */
+.order-summary {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: white;
+    float: right;
+    width: 300px;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-summary tr {
+    border-bottom: 1px solid #eee;
+}
+
+.order-summary td {
+    padding: 8px 4px;
+}
+
+.order-summary td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.order-summary .total {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    color: var(--primary-black);
+    border: 1px solid #ddd;
+}
+
+a.btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Form Layout */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Specific checkout layout */
+.checkout-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shipping-info {
+    flex: 2;
+    padding-right: 30px;
+    min-width: 300px;
+}
+
+.order-summary-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Links */
+a {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .checkout-container {
+        flex-direction: column;
+    }
+    
+    .shipping-info {
+        padding-right: 0;
+    }
+    
+    .order-summary {
+        width: 100%;
+        float: none;
+        margin-top: 30px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Simpler form styling to match screenshot */
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form textarea {
+    border: 1px solid #999;
+    border-radius: 0;
+    background-color: white;
+    font-size: 14px;
+}
+
+/* Payment method styling */
+.payment-method {
+    border: 1px solid var(--primary-green);
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+/* Button styling */
+input[type="button"], 
+button[type="submit"] {
+    background-color: #f8f9fa;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Fix for specific layout issues */
+.shipping-section h2,
+.payment-section h2 {
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Updated Order Summary */
+.order-summary {
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    width: auto;
+    float: none;
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-summary td {
+    text-align: right;
+}
+
+.order-summary td:first-child {
+    text-align: left;
+}
+
+/* Logo and Navigation */
+.navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+/* Header navigation */
+nav ul li a {
+    color: var(--dark-green);
+    font-size: 1.1rem;
+}
+
+/* User profile area */
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+}
+
+.user-links a {
+    margin: 0 10px;
+}
+
+/* Full width containers */
+.full-width {
+    width: 100%;
+}
+
+/* Fix specific layout from screenshot */
+.checkout-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form layout fixes */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Logout button */
+.logout-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Cozzy Kit - Kittens</title>
+    <link rel="stylesheet" href="kitten.css">
+</head>
+<body>
+    <!-- Overlay for background dimming -->
+    <div class="overlay" id="cartOverlay"></div>
+
+    <!-- Cart Side Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-panel-header">
+            <h2>My Cart</h2>
+            <button class="cart-panel-close" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-panel-footer">
+            <div class="cart-total" id="cartTotal"></div>
+            <div class="cart-actions">
+                <button class="cart-action-btn" onclick="viewCart()">View and Edit Cart</button>
+                <button class="cart-action-btn checkout" onclick="checkout()">Go to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="cat.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="green">Fluffy</span> 
+                    <span class="green">cozzy</span><br>
+                    <span class="black">kit</span>
+                </div>
+            </div>
+            <ul class="nav-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adult-cats.html">Adult Cats</a></li>
+                <li><a href="kittens.html" class="active">Kittens</a></li>
+                <li><a href="cat-food.html">Cat Food</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <img src="search.png" alt="Search Icon">
+                </li>
+                <li>
+                    <a href="#" id="openCart" style="position: relative;">
+                        <img src="cart.png" alt="Cart Logo">
+                        <span id="cartCount" class="cart-count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">
+                        <img src="account.png" alt="Account Logo">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filters">
+        <div>
+            <label for="breedFilter">Filter by Breed:</label>
+            <select id="breedFilter">
+                <option value="All">All</option>
+                <option value="Scottish">Scottish</option>
+                <option value="Persian">Persian</option>
+                <option value="Siamese">Siamese</option>
+                <option value="Maine Coon">Maine Coon</option>
+                <option value="Ragdoll">Ragdoll</option>
+                <option value="Bengal">Bengal</option>
+                <option value="Sphynx">Sphynx</option>
+            </select>
+        </div>
+        <div>
+            <label for="ageFilter">Age:</label>
+            <select id="ageFilter">
+                <option value="All">All</option>
+                <option value="0-0.5">0-6 months</option>
+                <option value="0.5-1">6-12 months</option>
+            </select>
+        </div>
+        <div>
+            <label for="priceFilter">Price:</label>
+            <select id="priceFilter">
+                <option value="All">All</option>
+                <option value="2000-5000">2000-5000 Rs</option>
+                <option value="5000-10000 BUDGET">5000-10000 Rs</option>
+                <option value="10000-15000">10000-15000 Rs</option>
+            </select>
+        </div>
+        <div>
+            <label for="genderFilter">Gender:</label>
+            <select id="genderFilter">
+                <option value="All">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Kittens Grid -->
+    <section class="kittens">
+        <h2>Available Kittens</h2>
+        <div class="kittens-grid" id="kittensGrid">
+            <!-- Kittens will be dynamically populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Kitten Care Tips Section -->
+    <section class="kitten-care">
+        <img src="petcare-remove.png" alt="Kitten Care">
+        <div class="kitten-care-text">
+            <h2>Kitten Care Tips</h2>
+            <p>Learn how to care for your new kitten with our expert tips!</p>
+            <a href="kitten-care.html" class="learn-more-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="reasons-grid">
+            <div class="reason">
+                <img src="https://images.unsplash.com/photo-1680691406746-de04c6bea9a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFwcHklMjBjYXR8ZW58MHx8MHx8fDA%3D" alt="Healthy Cat">
+                <p>Healthy and well-socialized kittens from trusted breeders.</p>
+                <h4>Quality Assurance</h4>
+            </div>
+            <div class="reason">
+                <img src="https://media.istockphoto.com/id/1854401602/photo/cute-bengal-cat-sitting-in-a-cardboard-box.jpg?s=612x612&w=0&k=20&c=Ow_bJr2mYOt6Uh6R1QoPknpuGgVijPCvh_pLJbBne98=" alt="Delivery Service">
+                <p>Fast delivery and excellent customer support.</p>
+                <h4>Great Service</h4>
+            </div>
+            <div class="reason">
+                <img src="https://media.istockphoto.com/id/182515843/photo/cat-shopping.jpg?s=612x612&w=0&k=20&c=0rW_WxBILxofHyFNXcIEiLYqgflpYUpMxCXTq7GayTw=" alt="Rewards Badge">
+                <p>Affordable prices with reward points on every purchase.</p>
+                <h4>Best Value</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Fluffy Cozzy Kit. All rights reserved.</p>
+    </footer>
+
+    <script src="cart.js" defer></script>
+    <script src="kitten.js" defer></script>
+</body>
+</html>

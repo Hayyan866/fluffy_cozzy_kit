@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Cozzy Kit</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.signup-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.signup-btn:hover {
+    background-color: #1e7e34;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Overlay for background dimming -->
+    <div class="overlay" id="cartOverlay"></div>
+
+    <!-- Cart Side Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-panel-header">
+            <h2>My Cart</h2>
+            <button class="cart-panel-close" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-panel-footer">
+            <div class="cart-total" id="cartTotal"></div>
+            <div class="cart-actions">
+                <button class="cart-action-btn" onclick="viewCart()">View and Edit Cart</button>
+                <button class="cart-action-btn checkout" onclick="checkout()">Go to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="cat.png" alt="Logo">
+                <div class="logo-text">
+                    <span class="green">Fluffy</span> 
+                    <span class="green">cozzy</span><br>
+                    <span class="black">kit</span>
+                </div>
+            </div>
+            
+            <!-- Removed the nav-center list -->
+            
+            <ul class="nav-right">
+                <li>
+                    <a href="login.php" class="auth-btn login-btn">Login</a>
+                </li>
+                <li>
+                    <a href="signup.php" class="auth-btn signup-btn">Signup</a>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="hero">
+            <h1>Find Your Perfect Cat &<br>Everything That Comes With It!</h1>
+
+            <div class="hero-buttons">
+                <a href="about-pets.html"><button class="read-more">Read More</button></a>
+                <button class="watch-video" onclick="scrollToVideo()">Watch Video</button>
+            </div>
+            <div class="pet-images">
+                <img src="image.png" alt="Pet 1">
+                <div class="pet-2-container">
+                    <img src="image copy 3.png" alt="Pet 2">
+                </div>
+                <img src="image copy 2.png" alt="Pet 3">
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-info">
+        <div class="info-box delivery">
+            <img src="del.png" alt="Delivery Icon">
+            <p>One day delivery, Orderolus before 5:00 PM</p>
+        </div>
+        <div class="info-box location">
+            <img src="loct.png" alt="Location Icon">
+            <p>Unit No S-05-605, MAG Properties Logistic Park, Al Quoz -2, Dubai</p>
+        </div>
+        <div class="info-box phone">
+            <img src="phone.png" alt="Phone Icon">
+            <p>Call us in 08:00 AM - 08:00 PM 04 336 2201</p>
+        </div>
+        <div class="info-box message">
+            <img src="chat.png" alt="Message Icon">
+            <p>Message us, respond same day!</p>
+        </div>
+    </section>
+
+    <section class="new-pet">
+        <img src="hold.png" alt="Person with Pet">
+        <div class="new-pet-text">
+            <h2>New Pet in Home?</h2>
+            <p>Find everything you need to get started.</p>
+            <a href="about-pets.html"><button>Learn More</button></a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Explore Our Cats & Products Services</h2>
+        <div class="services-grid">
+            <div class="service">
+                <img src="adult.png" alt="Adult Cats for Adoption">
+                <h3>Adult Cats for Adoption</h3>
+                <p>Adopt loving, well-socialized adult cats ready to become a part of your family. Browse available cats today.</p>
+                <a href="adult-cats.php" class="shop-btn">View Cats</a>
+            </div>
+            <div class="service">
+                <img src="kitte.png" alt="Kittens for Sale">
+                <h3>Kittens for Sale</h3>
+                <p>Find adorable, playful kittens for sale. Choose your perfect companion and bring joy into your home.</p>
+                <a href="kittens.php" class="shop-btn">Browse Kittens</a>
+            </div>
+            <div class="service">
+                <img src="foo.png" alt="Cat Food">
+                <h3>Cat Food</h3>
+                <p>Shop premium cat food tailored to all life stages—nutritious, vet-approved, and delivered to your door.</p>
+                <a href="cat-food.php" class="shop-btn">Shop Food</a>
+            </div>
+            <div class="service">
+                <img src="acc.png" alt="Cat Accessories">
+                <h3>Cat Accessories</h3>
+                <p>From comfy beds to fun toys and stylish collars, find everything your cat needs in one place.</p>
+                <a href="accessories.php" class="shop-btn">Shop Accessories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="video" id="videoSection">
+        <iframe src="tin-cat.mp4" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="brands">
+        <h2>Brands We Love</h2>
+        <div class="brands-logos">
+            <img src="b1.png" alt="Brand 1">
+            <img src="b2.png" alt="Brand 2">
+            <img src="b3.png" alt="Brand 3">
+            <img src="b4.png" alt="Brand 4">
+            <img src="b5.png" alt="Brand 5">
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Clients Have to Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <img src="boy.png" alt="Client 1">
+                <p>"Amazing service! My pet loves it here."</p>
+                <h4>David Jernani</h4>
+            </div>
+            <div class="testimonial">
+                <img src="gir.png" alt="Client 2">
+                <p>"The best pet care in town!"</p>
+                <h4>Sarah Smith</h4>
+            </div>
+        </div>
+    </section>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

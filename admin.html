@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Cozzy Kit - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Fluffy Cozzy Kit - Admin Panel</h1>
+    </header>
+
+    <!-- Admin Section -->
+    <section class="admin">
+        <h2>Admin Panel</h2>
+        <div class="admin-container">
+            <!-- Manage Products Form -->
+            <div class="form-container">
+                <h3>Manage Products</h3>
+                <form id="product-form">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select Category</option>
+                        <option value="adult-cats">Adult Cats</option>
+                        <option value="kittens">Kittens</option>
+                        <option value="cat-food">Cat Food</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                    <label for="price">Price (Rs):</label>
+                    <input type="number" id="price" name="price" required>
+                    <label for="product-image">Product Image:</label>
+                    <input type="file" id="product-image" name="product-image" accept="image/*">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Orders -->
+            <div class="orders-container">
+                <h3>Orders</h3>
+                <div id="orders-list">
+                    <p>Order #1234 - Pending <button onclick="updateOrderStatus('1234')">Update Status</button></p>
+                    <p>Order #5678 - Shipped <button onclick="updateOrderStatus('5678')">Update Status</button></p>
+                </div>
+            </div>
+
+            <!-- Customer Inquiries -->
+            <div class="inquiries-container">
+                <h3>Customer Inquiries</h3>
+                <div id="inquiries-list">
+                    <p>"When will my order ship?" - User123 <button onclick="replyInquiry('User123')">Reply</button></p>
+                    <p>"Is this cat food grain-free?" - User456 <button onclick="replyInquiry('User456')">Reply</button></p>
+                </div>
+            </div>
+
+            <!-- Manage Users -->
+            <div class="users-container">
+                <h3>Manage Users</h3>
+                <div id="users-list">
+                    <p>John Doe - john.doe@example.com</p>
+                    <p>Jane Smith - jane.smith@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Fluffy Cozzy Kit. All rights reserved.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+/* Header Section */
+header {
+    background-color: #eaf9f4;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #333;
+}
+
+/* Admin Section */
+.admin {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.admin h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.admin h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #B2D66F;
+    border-radius: 2px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.form-container, .orders-container, .inquiries-container, .users-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover, .orders-container:hover, .inquiries-container:hover, .users-container:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h3, .orders-container h3, .inquiries-container h3, .users-container h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container label {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-container input, .form-container textarea, .form-container select {
+    padding: 10px;
+    border: 1px solid #B2D66F;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="file"] {
+    padding: 8px;
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-container input:focus, .form-container textarea:focus, .form-container select:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+.form-container button, .orders-container button, .inquiries-container button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-container button:hover, .orders-container button:hover, .inquiries-container button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    animation: bounce 0.3s ease;
+}
+
+.orders-container p, .inquiries-container p, .users-container p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Decorative Elements */
+.form-container::before, .orders-container::before, .inquiries-container::before, .users-container::before {
+    content: '★';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 50px;
+    color: #28a745;
+    opacity: 0.2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #eaf9f4;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin h2 {
+        font-size: 28px;
+    }
+
+    .admin-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container, .orders-container, .inquiries-container, .users-container {
+        max-width: 90%;
+    }
+}

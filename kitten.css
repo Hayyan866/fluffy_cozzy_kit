@@ -1,0 +1,573 @@
+/* Cart Panel Styles */
+.cart-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cart-panel.open {
+    right: 0;
+}
+
+.cart-panel-header {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.cart-panel-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.cart-panel-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.quantity-controls span {
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.quantity-btn {
+    width: 24px;
+    height: 24px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    padding: 0;
+}
+
+.quantity-btn:hover {
+    background-color: #e5e5e5;
+}
+
+.remove-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    color: #ff5252;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+.remove-btn:hover {
+    text-decoration: underline;
+}
+
+.cart-panel-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.cart-total {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-action-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.cart-action-btn:first-child {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.cart-action-btn:first-child:hover {
+    background-color: #e0e0e0;
+}
+
+.cart-action-btn.checkout {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cart-action-btn.checkout:hover {
+    background-color: #3d9440;
+}
+
+.cart-empty {
+    text-align: center;
+    color: #777;
+    padding: 30px 0;
+}
+
+/* Overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Success message */
+.success-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1001;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeOut 0.5s ease 2.5s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; display: none; }
+}
+
+/* Filter Section */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.filters div {
+    display: flex;
+    align-items: center;
+}
+
+.filters label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+}
+
+.filters select {
+    padding: 8px;
+    border: 1px solid #B2D66F;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Kittens Section */
+.kittens {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.kittens h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.kittens h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #B2D66F;
+    border-radius: 2px;
+}
+
+.kittens-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kitten-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.kitten-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kitten-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.kitten-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.kitten-card:hover .kitten-image img {
+    transform: scale(1.05);
+}
+
+.kitten-info {
+    padding: 0;
+}
+
+.kitten-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.kitten-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.kitten-info .price {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.kitten-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    animation: bounce 0.3s ease;
+}
+
+/* Kitten Care Section */
+.kitten-care {
+    display: flex;
+    align-items: center;
+    background-color: #b3d66f;
+    color: #000;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.kitten-care::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+    background: url('paw-print.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.3;
+}
+
+.kitten-care::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 50%, transparent 50%);
+    opacity: 0.5;
+}
+
+.kitten-care img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.kitten-care-text {
+    margin-left: 30px;
+}
+
+.kitten-care-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.kitten-care-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more-btn::after {
+    content: '➔';
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    animation: bounce 0.3s ease;
+}
+
+.learn-more-btn:hover::after {
+    transform: translateX(5px);
+}
+
+/* Why Choose Us section */
+.why-choose-us {
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.reason {
+    text-align: center;
+    padding: 20px;
+}
+
+.reason img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.reason p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.reason h4 {
+    color: #28a745;
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-panel {
+        width: 100%;
+        right: -100%;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .filters div {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .kittens h2 {
+        font-size: 28px;
+    }
+
+    .kittens-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kitten-care {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kitten-care img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .kitten-care-text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+    }
+
+    .cart-action-btn {
+        margin: 5px 0;
+    }
+}
